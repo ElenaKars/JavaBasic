@@ -22,6 +22,7 @@ public class MyComparator implements Comparator<Integer> {
        }
        }
 
+
 public static void main(String[] args) {
     Integer[] integers = { 1, 6, 5, 4, 7, 8, 9, 2, 7, 3 };
 
