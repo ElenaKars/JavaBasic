@@ -20,14 +20,12 @@ public class Task_1 {
 
     }
     public static List<String> getUniqueSortedWords (String str){
-        String newStr = str.replaceAll("[^a-zA-Z0-9а-яА-Я ]", "");
-        String[] wordsArr = newStr.split(" ");
-        Set<String> set = new TreeSet<>(Arrays.asList(wordsArr));
+        String newStr = str.trim().replaceAll("[^a-zA-Z0-9а-яА-Я ]", "");
+        String[] wordsArr = newStr.split("\\s+");
+        Set<String> set = new TreeSet<>(Comparator.comparing(String :: length).thenComparing(Comparator.naturalOrder()));
+        set.addAll(Arrays.asList(wordsArr));
 
-        List<String> res = new ArrayList<>(set);
-        res.sort(Comparator.comparing(String :: length).thenComparing(String::compareTo));
-
-        return res;
+        return new ArrayList<>(set);
 
     }
 }
