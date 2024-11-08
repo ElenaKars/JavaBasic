@@ -36,8 +36,14 @@ public class Task_4 {
         int index = 10;
         System.out.println("Value at index " + index + " in ArrayList: " + getValueByInd(arrayList, index));
         System.out.println("Value at index " + index + " in LinkedList: " + getValueByInd(linkedList, index));
+     //   System.out.println("Value at index " + index + " in LinkedList: " + addValue(linkedList));
 
     }
+
+//    private static String addValue(List<Integer> linkedList) {
+//
+//    }
+
     public static int getValueByInd(List<Integer> list, int ind){
         if (ind >= 0 && ind < list.size()){
             return list.get(ind);
