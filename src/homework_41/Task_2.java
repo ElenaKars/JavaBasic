@@ -41,7 +41,10 @@ public class Task_2 {
                 ".\n Строка для проверки и теста. и количества слов для проверки";
 
         Map<String, Integer> frequencyMap = frequencyDictionary(text);
+        Map<String, Integer> frequencyMap1 = frequencyDictionary1(text);
         frequencyMap.forEach((key, value) -> System.out.println(key + ": " + value));
+        System.out.println("\n==========\n");
+        frequencyMap1.forEach((key, value) -> System.out.println(key + ": " + value));
 
         Map<Character, Integer> frequencyCharsMap = frequencyCharsDictionary(text);
 
@@ -59,6 +62,16 @@ public class Task_2 {
         }
         return map;
     }
+
+    private static Map<String, Integer> frequencyDictionary1(String text) {
+        String[] words = text.trim().replaceAll("[^a-zA-Z0-9а-яА-Я ]", "").split("\\s+");
+        Map<String, Integer> result = new HashMap<>();
+        for(String word : words) {
+            result.merge(word, 1, (oldValue, newValue) -> oldValue + newValue);
+        }
+return result;
+
+    };
 
     private static Map<String, Integer> frequencyDictionary(String text) {
         String newStr = text.trim().replaceAll("[^a-zA-Z0-9а-яА-Я ]", "");

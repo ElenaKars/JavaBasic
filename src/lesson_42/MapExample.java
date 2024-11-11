@@ -68,5 +68,14 @@ public class MapExample {
         }
         System.out.println("\n========\n");
         System.out.println(mapColors);
+
+        mapColors.forEach((key, value) -> System.out.println("key: " + key + "value: " + value));
+
+        System.out.println("\n========\n");
+        mapColors.forEach((k, v) -> {
+            System.out.println("Iteration:");
+            System.out.println("key: " + k + "; " + "value: " + v);
+            System.out.println("\n========\n");
+        });
     }
 }

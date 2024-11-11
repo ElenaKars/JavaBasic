@@ -20,7 +20,6 @@ package homework_41;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class Task_3 {
     public static void main(String[] args) {
