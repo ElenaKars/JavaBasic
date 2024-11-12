@@ -7,6 +7,7 @@
 package homework_43.task_3;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -27,7 +28,7 @@ public class Main {
 
     private static void getPersonByAgeAndCity(List<Person> persons) {
         List<Person> newCollect = persons.stream()
-                .filter(person -> person.getAge()>=21 && person.getCity() == "Sidney")
+                .filter(person -> person.getAge()>=21 && Objects.equals(person.getCity(), "Sidney"))
                 .collect(Collectors.toList());
         System.out.println(newCollect);
     }

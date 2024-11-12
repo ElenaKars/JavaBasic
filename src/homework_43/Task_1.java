@@ -19,7 +19,7 @@ public class Task_1 {
     private static void newCollection(List<Integer> integers) {
         List<Integer> newCollection = integers.stream()
                 .filter(i -> i % 2 == 0 && i > 10 && i < 100)
-                .collect(Collectors.toList());
+                .collect(Collectors.toList()); //.toList() in Java17
         System.out.println(newCollection);
     }
 

@@ -21,7 +21,7 @@ public class Cat {
     }
 
     public String getName() {
-        System.out.println("called getName " + name);
+//        System.out.println("called getName " + name);
         return name;
     }
 

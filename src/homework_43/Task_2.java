@@ -13,13 +13,13 @@ import java.util.stream.Collectors;
 public class Task_2 {
     public static void main(String[] args) {
         List<String> strings = List.of("Используя", "Stream", "отфильтруйте", "строки", "которые", "начинаются", "на", "определенную", "букву");
-        sortStrings(strings);
+        sortStrings(strings, 's');
     }
 
-    private static void sortStrings(List<String> strings) {
+    private static void sortStrings(List<String> strings, char charStart) {
         List<String> newCollect = strings.stream()
-                .filter(str -> str.length() > 3)
                 .map(String::toLowerCase)
+                .filter(str -> str.startsWith(String.valueOf(charStart)))
                 .distinct()
                 .sorted()
                 .collect(Collectors.toList());

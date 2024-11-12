@@ -1,5 +1,7 @@
 package homework_43.task_3;
 
+import java.util.Objects;
+
 public class Person {
     private String name;
     private int age;
@@ -9,6 +11,23 @@ public class Person {
         this.name = name;
         this.age = age;
         this.city = city;
+    }
+
+    @Override
+    public final boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Person)) return false;
+
+        Person person = (Person) o;
+        return age == person.age && Objects.equals(name, person.name) && Objects.equals(city, person.city);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(name);
+        result = 31 * result + age;
+        result = 31 * result + Objects.hashCode(city);
+        return result;
     }
 
     @Override
