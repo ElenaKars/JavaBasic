@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 public class Task_1 {
     public static void main(String[] args) {
-        List<Integer> integers = List.of(2, 5, 56, 32, 12, 29, 24, 77);
+        List<Integer> integers = List.of(2, 5, 66, 56, 32, 12, 29, 24, 77);
         System.out.println(sortIntegers(integers));
 
     }
@@ -17,7 +17,7 @@ public class Task_1 {
 
         return integers.stream()
                 .filter(integer -> integer > 10)
-                .sorted(Comparator.comparingInt(n -> n % 10))
+                .sorted(Comparator.comparingInt((Integer n)  -> n % 10).thenComparing(n -> n))
                 .collect(Collectors.toList());
     }
 }
