@@ -106,6 +106,7 @@ public class MyArrayList <T> implements MyList <T>{
             return array[index];
         }
         // Написать код, если индекс "не корректный"
+
         return null; //
 
     }
