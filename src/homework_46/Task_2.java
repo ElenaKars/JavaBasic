@@ -4,17 +4,28 @@ package homework_46;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.List;
 
 public class Task_2 {
     public static void main(String[] args) {
-        LocalDate date1 = LocalDate.of(2011, 9, 11);
-        LocalDate date = LocalDate.of(1973, 4, 4);
-        System.out.println("Days between dates " + date + " and " + date1 + ": " + countDaysBetweenDates(date, date1));
+        List<LocalDate> dates = List.of(LocalDate.of(2011, 9, 11),
+                LocalDate.of(1973, 4, 4),
+                LocalDate.of(1888, 1,1),
+                LocalDate.of(2016, 8, 16),
+                LocalDate.of(2888, 1,1));
+
+        System.out.println("Between minimum and max dates: " + countDaysBetweenDates(dates) + " days");
 
     }
 
-    private static long countDaysBetweenDates(LocalDate date, LocalDate date1) {
-        return date.until(date1, ChronoUnit.DAYS);
+    private static long countDaysBetweenDates(List<LocalDate> dates) {
+        LocalDate min = LocalDate.now();
+        LocalDate max = LocalDate.now();
+        for (LocalDate date : dates){
+            if(date.isBefore(min)) min = date;
+            if(date.isAfter(max)) max = date;
+        }
+        return min.until(max, ChronoUnit.DAYS);
     }
 
 
